@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutu Yönetimi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #333; /* Arka plan koyu gri */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px; /* Kutular arasındaki boşluk */
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px; /* Maksimum genişlik */
+        }
+
+        .box {
+            background-color: #f0f0f0; /* Kutular kırık beyaz */
+            border-radius: 10px; /* Kenarları yuvarlak */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+            border: none; /* Kenar çizgileri görünmesin */
+        }
+
+        .box.special {
+            background-color: #e6e6e6; /* Özel kutu biraz daha koyu */
+        }
+
+        .box h3 {
+            font-size: 14px; /* Başlıklar daha küçük */
+            margin-top: 0; /* Üstte fazla boşluk bırakma */
+            margin-bottom: 5px; /* Altında az yer olsun */
+            align-self: flex-start; /* Başlıklar kutunun sol üstünde */
+        }
+
+        .box ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            margin: 0;
+        }
+
+        .box ul li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px; /* Kenarları hafif yuvarlak */
+            border: none;
+            outline: none;
+        }
+
+        button {
+            margin-top: 10px;
+            border: none;
+            background-color: #555;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+
+        /* Küçük ekranlar için uyum */
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr; /* Küçük ekranda kutular alt alta */
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="item-input" placeholder="Metin girin">
+    <select id="box-select">
+        <!-- Seçenekler JavaScript ile eklenecek -->
+    </select>
+    <button id="add-button">Ekle</button>
+    <div class="container" id="box-container">
+        <!-- Kutular burada oluşturulacak -->
+    </div>
+
+    <script src="dosya.js" defer></script>
+</body>
+</html>
